@@ -150,7 +150,7 @@ function [est,B,k1,k2,k3,xx] = DTTFs(N,Nf,order,alfa,nmo)
     e=zeros(2*Nh+1,nmo);
 
     if mod(Nf,2) == 0
-    % Taylor-Fourier Matrix
+    % Taylor-Fourier Matrix for even harmonics
         for kpa = 1:1:(2*(Nfrec)+1)
             for nI=1:1:(cut)
                 for n = -Nh : 1: Nh
@@ -169,7 +169,7 @@ function [est,B,k1,k2,k3,xx] = DTTFs(N,Nf,order,alfa,nmo)
         end
         B=[BMr BMi];
     else
-        % Se genera la matriz de Taylor-Fourier
+        % Taylor-Fourier Matrix for odd harmonics
         for kpa = 1:1:(2*(Nfrec)+1)
             for nI=1:1:(cut)
                 for n = -Nh : 1: Nh
